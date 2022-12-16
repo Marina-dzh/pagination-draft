@@ -11,7 +11,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
   
-let pagination = [];
+
 let gallery =  new SimpleLightbox('.gallery a',);
 const refs = {
     input: document.querySelector('[name="searchQuery"]'),
@@ -56,10 +56,7 @@ function createPagination(totalHits) {
      lastItemClassName: 'tui-last-child',
       
    });
-  
-}
-
- pagination.on('afterMove', (event) => {
+  pagination.on('afterMove', (event) => {
     refs.list.innerHTML = ""
     const currentPage = event.page;
     const query = refs.input.value.trim()
@@ -70,6 +67,9 @@ function createPagination(totalHits) {
     }).catch(console.error())
      console.log(currentPage);;
  });
+}
+
+ 
     
 function createMarkup(arr) {
   return arr.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `<a class="gallery__item" href="${largeImageURL}"><div class="photo-card">
