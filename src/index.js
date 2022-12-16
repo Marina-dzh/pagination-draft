@@ -35,7 +35,7 @@ function onSearch(e) {
     .then(data => {
       refs.list.insertAdjacentHTML("beforeend", createMarkup(data.hits));
       gallery.refresh();
-      totalHits=data.totalHits;
+      const totalHits=data.totalHits;
       createPagination(totalHits);
       
       Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
