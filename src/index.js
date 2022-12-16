@@ -56,17 +56,17 @@ function createPagination(totalHits) {
      lastItemClassName: 'tui-last-child',
       
    });
-//   pagination.on('afterMove', (event) => {
-//     refs.list.innerHTML = ""
-//     const currentPage = event.page;
-//     const query = refs.input.value.trim()
-//     fetchImages(query,currentPage)
-//     .then(data => {
-//       refs.list.insertAdjacentHTML("beforeend", createMarkup(data.hits));
-//       gallery.refresh();
-//     }).catch(console.error())
-//      console.log(currentPage);
-//  });
+  pagination.on('afterMove', (event) => {
+    refs.list.innerHTML = ""
+    const currentPage = event.page;
+    const query = refs.input.value.trim()
+    fetchImages(query,currentPage)
+    .then(data => {
+      refs.list.insertAdjacentHTML("beforeend", createMarkup(data.hits));
+      gallery.refresh();
+    }).catch(console.error())
+     console.log(currentPage);
+ });
 }
 
  
